@@ -6,7 +6,7 @@ resource "aws_s3_bucket" "private" {
 
 variable "bucket" {
   description = "S3 bucket name"
-  type = string
+  type = "string"
 }
 
 provider "aws" {
