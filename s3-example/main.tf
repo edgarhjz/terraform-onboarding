@@ -1,10 +1,6 @@
 resource "aws_s3_bucket" "private" {
-  bucket = var.bucket
-  acl = "private"
-}
-
-resource "aws_s3_bucket" "private2" {
-  bucket = var.bucket2
+  count =2
+  bucket = "${var.bucket}-${count.index}"
   acl = "private"
 }
 
@@ -13,21 +9,10 @@ variable "bucket" {
   type = string
 }
 
-variable "bucket2" {
-  description = "S3 bucket name 2"
-  type = string
-}
-
 provider "aws" {
-  region = ""
-  access_key = ""
-  secret_key = ""
+  version = "~> 2.0"
 }
 
-output "bucket1" {
-  value = aws_s3_bucket.private.bucket
-}
-
-output "bucket2" {
-  value = aws_s3_bucket.private2.bucket
+output "bucket" {
+  value = "aws_s3_bucket.private.bucket"
 }
