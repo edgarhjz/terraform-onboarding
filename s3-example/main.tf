@@ -13,6 +13,6 @@ provider "aws" {
   version = "~> 2.0"
 }
 
-output "bucket" {
-  value = "aws_s3_bucket.private.bucket"
+output "buckets" {
+  value = "aws_s3_bucket.private.bucket.*.bucket"
 }
