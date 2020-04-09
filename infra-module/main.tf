@@ -7,10 +7,8 @@ provider "aws" {
 # t2.micro node with an AWS Tag naming it "EdgarEC2-modules"
 module "compute" {
   source = "./ec2"
-  tags = "${var.tags}"
 }
 
 module "storage" {
   source = "./s3"
-  bucket = "${var.bucket}"
 }
