@@ -1,3 +1,3 @@
 output "instance_out" {
-  value = "aws_instance.myinstance.name"
+  value = "aws_instance.myinstance.tags"
 }
