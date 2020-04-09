@@ -11,5 +11,4 @@ module "compute" {
 
 module "storage" {
   source = "./s3"
-  bucket = "${var.bucket}"
 }
